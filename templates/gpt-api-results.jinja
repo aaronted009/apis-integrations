@@ -18,13 +18,9 @@
   </div>
 </nav>
 
-<form class="pt-5 row g-3" method="POST">
-  <div class="col-auto">
-    <input type="text" name="gpt_query" class="form-control" id="gpt_query" placeholder="AskChatGPT" required="">
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">Ask</button>
-  </div>
-</form>
+<ul>
+    <li>{{query}}</li>
+    <li>{{reply}}</li>
+</ul>
 
 {% endblock %}
