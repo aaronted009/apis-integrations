@@ -4,6 +4,7 @@ import requests
 import os
 import openai
 from dotenv import load_dotenv
+import typing
 
 load_dotenv()
 
@@ -100,6 +101,7 @@ async def chatgpt_results(
     """ChatGPT api page."""
     openai.api_key = os.getenv("OPENAI-API-KEY")
     messages=[{"role": "system", "content": "You are a helpful assistant."}]
+    completion : typing.Any | None = None
     if gpt_query:
         messages.append(
             {"role": "user", "content": gpt_query},
