@@ -110,9 +110,8 @@ async def chatgpt_results(
                 messages=messages,
             )
         except Exception as e:
-            print(e)
-    print(completion.choices[0].message)
-    reply = completion.choices[0].message.content
+            print("Exception : ", e)
+    reply = completion.choices[0].message.content if completion else "No answer from ChatGPT; please check your logs."
     return templates.TemplateResponse(
         "gpt-api-results.jinja", {"request": request, "query": gpt_query, "reply": reply}
     )
